@@ -15,9 +15,17 @@ function add(e){
         error.style.display="block";
     }
     let newItem = document.createElement('li');
-    list.textContent=input.value;
+    newItem.textContent=input.value;
     list.appendChild(newItem);
     input.value='';
     
 }
 btn.addEventListener('click',add);
+
+function toggleItem(e){
+    if(e.target.tagName=="LI"){
+    e.target.classList.toggle("completed");
+    }
+
+}
+list.addEventListener("click",toggleItem);
