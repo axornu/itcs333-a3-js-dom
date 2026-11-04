@@ -53,5 +53,28 @@ for(let item of items){
     item.style.display="block";
 }
 }
-filterAll.addEventListener("click",filter());
+filterAll.addEventListener("click",filter);
 
+function active(){
+    let items = list.querySelectorAll('li');
+    for(let item of items){
+        if(item.className == "completed"){
+            item.style.display="none";
+        }
+    }
+}
+filterActive.addEventListener("click" ,active);
+
+function done(){
+    let items = document.querySelectorAll('li');
+    for (let item of items){
+        if(item.className=="completed"){
+            item.style.display="block";
+        }
+        else{
+            item.style.display="none";
+        }
+
+    }
+}
+filterDone.addEventListener("click",done);
