@@ -13,11 +13,25 @@ function add(e){
     e.preventDefault();
     if(input.value==""){
         error.style.display="block";
+
     }
+    else{
+        error.style.display="none";
     let newItem = document.createElement('li');
     newItem.textContent=input.value;
+    
+   let deleteBtn = document.createElement("button");
+   deleteBtn.textContent="Delete";
+   deleteBtn.classList.add('delete-btn');
+   deleteBtn.addEventListener("click",function(){
+    list.removeChild(newItem);
+   });
+
+   newItem.appendChild(deleteBtn);
+
     list.appendChild(newItem);
     input.value='';
+}
     
 }
 btn.addEventListener('click',add);
@@ -29,3 +43,4 @@ function toggleItem(e){
 
 }
 list.addEventListener("click",toggleItem);
+
