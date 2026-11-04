@@ -1,9 +1,4 @@
-// ITCS333 A3 starter — implement the to-do app per README.
-// You may wrap everything in a DOMContentLoaded handler or an IIFE.
-// Requirements: add / toggle-complete / delete / filter / counter,
-// using event delegation on #todo-list.
 
-// TODO: your code here
 document.addEventListener("DOMContentLoaded",function(){
 
 
@@ -97,4 +92,5 @@ function updateCounter(){
     }
     counter.textContent=count+" item(s) left";
 } 
+
 })
