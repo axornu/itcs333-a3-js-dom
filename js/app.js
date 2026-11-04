@@ -4,6 +4,9 @@
 // using event delegation on #todo-list.
 
 // TODO: your code here
+document.addEventListener("DOMContentLoaded",function(){
+
+
 let input = document.getElementById('todo-input');
 let btn = document.getElementById('add-btn');
 let list = document.getElementById("todo-list");
@@ -46,6 +49,7 @@ function toggleItem(e){
 
 }
 list.addEventListener("click",toggleItem);
+
 let filterAll = document.getElementById('filter-all');
 let filterActive = document.getElementById('filter-active');
 let filterDone = document.getElementById('filter-done');
@@ -69,7 +73,7 @@ function active(){
 filterActive.addEventListener("click" ,active);
 
 function done(){
-    let items = document.querySelectorAll('li');
+    let items = list.querySelectorAll('li');
     for (let item of items){
         if(item.className=="completed"){
             item.style.display="block";
@@ -93,3 +97,4 @@ function updateCounter(){
     }
     counter.textContent=count+" item(s) left";
 } 
+})
