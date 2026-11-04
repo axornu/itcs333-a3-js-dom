@@ -43,4 +43,15 @@ function toggleItem(e){
 
 }
 list.addEventListener("click",toggleItem);
+let filterAll = document.getElementById('filter-all');
+let filterActive = document.getElementById('filter-active');
+let filterDone = document.getElementById('filter-done');
+
+function filter(){
+let items = list.querySelectorAll('li');
+for(let item of items){
+    item.style.display="block";
+}
+}
+filterAll.addEventListener("click",filter());
 
