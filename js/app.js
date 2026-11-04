@@ -9,7 +9,7 @@ let error = document.getElementById("error-msg");
 
 function add(e){
     e.preventDefault();
-    if(input.value==""){
+    if(input.value.trim()==""){
         error.style.display="block";
 
     }
@@ -60,7 +60,7 @@ filterAll.addEventListener("click",filter);
 function active(){
     let items = list.querySelectorAll('li');
     for(let item of items){
-        if(item.className == "completed"){
+        if(item.className.contains("completed")){
             item.style.display="none";
         }
     }
@@ -70,7 +70,7 @@ filterActive.addEventListener("click" ,active);
 function done(){
     let items = list.querySelectorAll('li');
     for (let item of items){
-        if(item.className=="completed"){
+        if(item.className.contains("completed")){
             item.style.display="block";
         }
         else{
@@ -86,7 +86,7 @@ function updateCounter(){
     let items=document.querySelectorAll('li');
     let count= 0;
     for(let item of items){
-        if(item.className != 'completed'){
+        if(!item.className.contains('completed')){
             count++;
         }
     }
