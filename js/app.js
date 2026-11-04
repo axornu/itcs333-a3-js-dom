@@ -16,7 +16,10 @@ function add(e){
     else{
         error.style.display="none";
     let newItem = document.createElement('li');
-    newItem.textContent=input.value;
+    let span = document.createElement('span');
+        span.textContent = input.value;
+        span.classList.add('item-text');
+        newItem.appendChild(span);
     
    let deleteBtn = document.createElement("button");
    deleteBtn.textContent="Delete";
@@ -60,7 +63,7 @@ filterAll.addEventListener("click",filter);
 function active(){
     let items = list.querySelectorAll('li');
     for(let item of items){
-        if(item.className.contains("completed")){
+        if(item.classList.contains("completed")){
             item.style.display="none";
         }
     }
@@ -70,7 +73,7 @@ filterActive.addEventListener("click" ,active);
 function done(){
     let items = list.querySelectorAll('li');
     for (let item of items){
-        if(item.className.contains("completed")){
+        if(item.classList.contains("completed")){
             item.style.display="block";
         }
         else{
@@ -86,7 +89,7 @@ function updateCounter(){
     let items=document.querySelectorAll('li');
     let count= 0;
     for(let item of items){
-        if(!item.className.contains('completed')){
+        if(!item.classList.contains('completed')){
             count++;
         }
     }
