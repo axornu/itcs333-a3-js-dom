@@ -25,12 +25,14 @@ function add(e){
    deleteBtn.classList.add('delete-btn');
    deleteBtn.addEventListener("click",function(){
     list.removeChild(newItem);
+    updateCounter();
    });
 
    newItem.appendChild(deleteBtn);
 
     list.appendChild(newItem);
     input.value='';
+    updateCounter();
 }
     
 }
@@ -40,6 +42,7 @@ function toggleItem(e){
     if(e.target.tagName=="LI"){
     e.target.classList.toggle("completed");
     }
+    updateCounter();
 
 }
 list.addEventListener("click",toggleItem);
@@ -78,3 +81,15 @@ function done(){
     }
 }
 filterDone.addEventListener("click",done);
+let counter = document.getElementById('counter');
+
+function updateCounter(){
+    let items=document.querySelectorAll('li');
+    let count= 0;
+    for(let item of items){
+        if(item.className != 'completed'){
+            count++;
+        }
+    }
+    counter.textContent=count+" item(s) left";
+} 
