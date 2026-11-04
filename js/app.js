@@ -2,9 +2,9 @@
 (function(){
 
 let input = document.getElementById('todo-input');
-let btn = document.getElementById('add-btn');
 let list = document.getElementById("todo-list");
 let error = document.getElementById("error-msg");
+let form = document.getElementById('todo-form');
 
 function add(e){
     e.preventDefault();
@@ -31,7 +31,7 @@ function add(e){
   
     
 
- btn.addEventListener('click',add);
+ form.addEventListener('submit',add);
 
 function toggleItem(e){
     
